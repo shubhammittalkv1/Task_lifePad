@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Task_LifePad</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="css/thumbnail-gallery.css" rel="stylesheet">
+    
+    <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.12.0.min.js"></script>
+</head>
+
+<body onload="fun()">
+    <!-- Navigation -->
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand">LifePad</a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a>About</a>
+                    </li>
+                    <li>
+                        <a>What We do here</a>
+                    </li>
+                    <li>
+                        <a>Contact</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+    <!-- Page Content -->
+    <div class="container"  style="overflow:hidden">
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="page-header" style="color:#264d73">LifePad Gallery</h1>
+            </div>
+            <div id="demo" class="collapse" style="width:50%;height:50%;margin-left:25%">
+                <div class="modal-body">
+                    <div id="carousel-example-generic" class="carousel slide ">
+                    <!-- Wrapper for slides -->
+                        <div class="carousel-inner" role="listbox">
+                            <div class="item active">
+                                <img src="" id="first" >   
+                            </div>
+                        </div> 
+                        <!-- Controls -->
+                        <a class="left carousel-control" onclick="previous()" role="button" data-slide="prev">
+                            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                            <span class="sr-only">Previous</span>
+                        </a>
+                        <a class="right carousel-control" onclick="next()" role="button" data-slide="next">
+                            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                            <span class="sr-only">Next</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 thumb">
+            <div class="img-thumbnail">
+                <img class="img-responsive" src="" data-toggle="collapse" data-target="#demo" onclick="ss(this.id)" id="1"/>
+            </div>
+        </div>
+        <div class="col-md-4 thumb">
+            <div class="img-thumbnail">
+                <img class="img-responsive" src="" data-toggle="collapse" data-target="#demo" onclick="ss(this.id)" id="2"/>
+            </div>
+        </div>
+        <div class="col-md-4 thumb">
+            <div class="img-thumbnail">
+                <img class="img-responsive" src="" data-toggle="collapse" data-target="#demo" onclick="ss(this.id)" id="3"/>
+            </div>
+        </div> 
+        <div class="col-md-4 thumb">
+            <div class="img-thumbnail">
+                <img class="img-responsive" src="" data-toggle="collapse" data-target="#demo" onclick="ss(this.id)" id="4"/>
+            </div>
+        </div>
+        <div class="col-md-4 thumb">
+            <div class="img-thumbnail">
+                <img class="img-responsive" src="" data-toggle="collapse" data-target="#demo" onclick="ss(this.id)" id="5"/>
+            </div>
+        </div>
+        <div class="col-md-4 thumb">
+            <div class="img-thumbnail">
+                <img class="img-responsive" src="" data-toggle="collapse" data-target="#demo" onclick="ss(this.id)" id="6"/>
+            </div>
+        </div>
+        <div class="col-md-4 thumb">
+            <div class="img-thumbnail">
+                <img class="img-responsive" src="" data-toggle="collapse" data-target="#demo" onclick="ss(this.id)" id="7"/>
+            </div>
+        </div>
+        <div class="col-md-4 thumb">
+            <div class="img-thumbnail">
+                <img class="img-responsive" src="" data-toggle="collapse" data-target="#demo" onclick="ss(this.id)" id="8"/>
+            </div>
+        </div>
+        <div class="col-md-4 thumb">
+            <div class="img-thumbnail">
+                <img class="img-responsive" src="" data-toggle="collapse" data-target="#demo" onclick="ss(this.id)" id="9"/>
+            </div>
+        </div>
+        <script>
+            function fun()
+                {
+                    var ap = ["img/1.jpg","img/2.jpg","img/3.jpg","img/4.jpg","img/5.jpg","img/6.jpg","img/7.jpg","img/8.jpg","img/9.jpg"];
+                    var i; 
+                    for (i = 1;i <=ap.length;i++)
+                        {
+                            document.getElementById(i).src= ap[i-1];        
+                        }
+                }
+        </script>
+    </div>
+    <!--end thumbnail-->
+    <!--modal-->
+    <!--end modal-->
+    <hr>
+    <!-- Footer -->
+    <footer>
+        <div class="row">
+            <div class="col-md-4"></div>
+            <div class="col-md-4" style="text-align:center">
+                <p>Copyright &copy; Shubham Mittal</p>
+            </div>
+            <div class="col-md-4"></div>
+        </div>
+    </footer>
+    <script>
+        var id;
+            function ss(x){
+            id = x;
+            var src_img = document.getElementById(id).src;
+            document.getElementById("first").setAttribute("src",src_img);
+            }
+            function next(){
+            var i = 1;
+            if(id >= 9)
+            {
+                id = 0;
+            }
+            var id_next = parseInt(id)+i;
+            var src_next = document.getElementById(id_next).src;
+            document.getElementById("first").setAttribute("src",src_next);
+            id = id_next;
+            }
+            function previous(){
+            var i = 1;
+            var id_prev = parseInt(id)-i;
+            if(id_prev == 0)
+            {
+            id_prev = 9;
+            }
+            var src_prev = document.getElementById(id_prev).src;
+            document.getElementById("first").setAttribute("src",src_prev);
+            id = id_prev;
+            }
+    </script>
+    
+    <!-- /.container -->
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+</body>
+
+</html>
